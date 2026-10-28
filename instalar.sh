@@ -5,7 +5,7 @@
 set -euo pipefail
 
 DIR="$(cd "$(dirname "$0")" && pwd)"
-LABEL="com.diego.luzgas"
+LABEL="local.luzgas"
 PLIST="$HOME/Library/LaunchAgents/$LABEL.plist"
 
 if [ ! -f "$DIR/config.json" ]; then

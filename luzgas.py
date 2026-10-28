@@ -341,7 +341,7 @@ def _fecha_flexible(s):
 
 
 def leer_csv_entrada(cups=""):
-    """Lee los CSV de consumo horario que Diego deje en entrada/ (Datadis web, UFD, i-DE...).
+    """Lee los CSV de consumo horario que dejes en entrada/ (Datadis web, UFD, i-DE...).
 
     Si el nombre del archivo contiene parte del CUPS (los 20 primeros caracteres), solo se usa
     para ese suministro; si no lleva CUPS en el nombre, se usa para todos.
