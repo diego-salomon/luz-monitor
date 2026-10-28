@@ -1,0 +1,98 @@
+{
+  "_instrucciones": "Copia este archivo como config.json y rellena lo que falte. Los campos que empiezan por _ son comentarios.",
+  "nif": "TU_NIF_O_NIE",
+  "cups": "",
+  "_cups": "Déjalo vacío para usar el primer suministro que encuentre en Datadis.",
+  "keychain_datadis": "luzgas-datadis",
+  "_keychain_datadis": "Nombre con el que guardaste la contraseña de Datadis en el Llavero (ver README).",
+  "email": {
+    "activo": true,
+    "para": "tu-correo@gmail.com",
+    "de": "tu-correo@gmail.com",
+    "smtp_host": "smtp.gmail.com",
+    "smtp_puerto": 587,
+    "keychain_smtp": "luzgas-smtp",
+    "semanal_solo_si_hay_alertas": true
+  },
+  "recurrencia": {
+    "dia_del_mes_informe_completo": 6,
+    "chequeo_semanal": false,
+    "_chequeo_semanal": "Ponlo en true si quieres además un chequeo rápido cada 7 días (solo avisa si hay alertas).",
+    "dias_entre_chequeos_rapidos": 7
+  },
+  "contrato_actual": {
+    "nombre": "Mi tarifa actual",
+    "comercializadora_esperada": "",
+    "_comercializadora_esperada": "Escribe aquí el nombre tal como sale en Datadis la primera vez. Si cambia sin que lo pidas, te llega una alerta.",
+    "tipo": "",
+    "_tipo": "Déjalo vacío hasta rellenar los precios. Opciones: pvpc, fija (mismo precio 24 h) o periodos (punta/llano/valle).",
+    "potencia_p1_eur_kw_dia": null,
+    "potencia_p2_eur_kw_dia": null,
+    "energia_eur_kwh": null,
+    "_energia_eur_kwh": "Para tipo fija un número (ej. 0.1199). Para tipo periodos un objeto {\"punta\": 0.17, \"llano\": 0.11, \"valle\": 0.07}. Sin IVA ni impuesto eléctrico, como aparecen en la web de la compañía.",
+    "cuota_mensual_extra_eur": 0,
+    "_cuota_mensual_extra_eur": "Servicios añadidos que pagas cada mes (mantenimiento, seguros...).",
+    "fecha_renovacion": "",
+    "_fecha_renovacion": "AAAA-MM-DD. Te avisa 45 días antes."
+  },
+  "ofertas": [
+    {
+      "nombre": "EJEMPLO, cámbialo: oferta fija 24 h",
+      "activa": false,
+      "tipo": "fija",
+      "potencia_p1_eur_kw_dia": 0.0899,
+      "potencia_p2_eur_kw_dia": 0.0899,
+      "energia_eur_kwh": 0.1099,
+      "cuota_mensual_extra_eur": 0,
+      "permanencia": "sin permanencia",
+      "fuente": "web de la compañía, fecha en que la miraste"
+    },
+    {
+      "nombre": "EJEMPLO, cámbialo: oferta 3 periodos",
+      "activa": false,
+      "tipo": "periodos",
+      "potencia_p1_eur_kw_dia": 0.075,
+      "potencia_p2_eur_kw_dia": 0.005,
+      "energia_eur_kwh": {
+        "punta": 0.17,
+        "llano": 0.11,
+        "valle": 0.075
+      },
+      "cuota_mensual_extra_eur": 0,
+      "permanencia": "sin permanencia",
+      "fuente": ""
+    }
+  ],
+  "gas": {
+    "tarifa": "",
+    "_tarifa": "Ej. TUR1 con Curenergía, o el nombre de tu tarifa del mercado libre.",
+    "uso": "",
+    "_uso": "Ej. calefacción + agua caliente."
+  },
+  "ajustes": {
+    "margen_potencia": 0.12,
+    "_margen_potencia": "Margen sobre la potencia máxima registrada al recomendar P1/P2 (0.12 = 12 %).",
+    "ahorro_minimo_para_cambiar_eur_anio": 40,
+    "potencias_normalizadas_kw": [
+      2.3,
+      3.45,
+      4.6,
+      5.75,
+      6.9,
+      8.05,
+      9.2
+    ]
+  },
+  "regulado": {
+    "_nota": "Valores regulados de 2026 (BOE/CNMC). Revísalos cada enero. Si cambian, el informe saldrá desviado hasta que los actualices.",
+    "anio": 2026,
+    "pvpc_potencia_p1_eur_kw_anio": 27.704413,
+    "pvpc_potencia_p2_eur_kw_anio": 0.725423,
+    "pvpc_margen_comercializacion_eur_kw_anio": 3.113,
+    "financiacion_bono_social_eur_anio": 9.011295,
+    "impuesto_electrico_pct": 5.11269632,
+    "impuesto_electrico_minimo_eur_kwh": 0.001,
+    "alquiler_contador_eur_mes": 0.81,
+    "iva_pct": 21
+  }
+}
